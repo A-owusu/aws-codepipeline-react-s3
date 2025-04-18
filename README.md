@@ -48,3 +48,21 @@ First, we’ll set up a React app by cloning the React app from my GitHub reposi
 git clone https://github.com/julien-muke/saas-landing-page.git
 ```
 
+## ➡️ Step 2 - Create S3 Bucket for Hosting
+
+For the deploy provider we are going to use Amazon S3, we will create an S3 bucket.
+1. Head over to the S3 service.
+2. Click Create bucket.
+3. Name it something unique like `my-react-cicd-demo`
+
+Once the s3 bucket is created, leave it for now, as we will come for it to finish the setup later.
+
+## ➡️ Step 3 - Create CodeBuild Project
+
+Now let’s set up CodeBuild, which will handle building the React app.
+
+1. Go to CodeBuild, click Create Build Project.
+2. Name it something like `react-app-builder`
+3. Connect to GitHub or choose AWS CodePipeline as the source later.
+4. Choose a managed image: aws/codebuild/standard:6.0 (or latest).
+5. Set the buildspec file as default (we’ll add it to our repo).
