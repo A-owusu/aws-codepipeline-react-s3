@@ -87,3 +87,16 @@ artifacts:
   base-directory: build
 
 ```
+
+Note: This file tells CodeBuild to install dependencies, build the app, and copy the contents of the build/ folder as artifacts.
+
+## ➡️ Step 4 - Create CodePipeline
+
+Now the fun part—building the pipeline.
+
+1. Go to AWS CodePipeline, click Create pipeline.
+2. Name your pipeline: ReactApp-CI-CD.
+3. Choose a new service role or an existing one.
+4. Add source stage:
+<br>- Source provider: GitHub (connect your GitHub account).
+<br>- Select your repository and branch.
