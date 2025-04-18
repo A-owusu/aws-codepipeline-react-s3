@@ -27,36 +27,24 @@ like these step-by-step in a beginner-friendly manner!
 
 ## <a name="introduction">🤖 Introduction</a>
 
-In this tutorial, you'll learn how to build a fully automated CI/CD pipeline using AWS CodePipeline, CodeBuild, and Amazon S3 to deploy a React.js application hosted on GitHub. Say goodbye to manual deployments—every time you push to your repo, your app will automatically build and deploy to a static website on S3!
+In this tutorial, you'll learn how to build a fully automated CI/CD pipeline using AWS CodePipeline, CodeBuild, and Amazon S3 to deploy a React.js application hosted on GitHub. Say goodbye to manual deployments, every time you push to your repo, your app will automatically build and deploy to a static website on S3!
 
 
 ## <a name="steps">☑️ Steps</a>
 
-1. Clone React.js App from Github
-1. Create an IAM User
-2. Configure AWS profile and set up the AWS CLI
-3. Set Up Terraform Configuration
-4. Deploy the Infrastructure with Terraform
-5. Clean Up Resources
+1. Setup your React App on GitHub
+2. Create S3 Bucket for Hosting
+3. Create CodeBuild Project
+4. Create CodePipeline
+5. Test the Pipeline
+6. Clean Up Resources
 
-## <a name="quick-start">🤸 Quick Start</a>
+## ➡️ Step 1 - Setup your React.js App on GitHub
 
-**Prerequisites**
+First, we’ll set up a React app by cloning the React app from my GitHub repository. You can use your own or follow along with mine. Make sure the app is committed to GitHub.
 
-Make sure you have the following installed on your machine:
-
-- [Node.js](https://nodejs.org/en) installed on your system.
-- [Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) (1.2.0+) installed.
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) installed.
-- [AWS account](https://aws.amazon.com/free/) and [associated credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html) that allow you to create resources.
-
-
-## <a name="clone-repo">	:octocat:  Cloning the Repository</a>
-
-First, we’ll set up a React app by cloning the React app from my GitHub repository. If you already have one, feel free to skip this part.
 
 ```bash
-git clone https://github.com/julien-muke/brainwave.git
+git clone https://github.com/julien-muke/saas-landing-page.git
 ```
 
-## ➡️ Step 1 - Create an IAM User, and the Access Key
