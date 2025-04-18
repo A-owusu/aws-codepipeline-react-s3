@@ -32,7 +32,7 @@ In this tutorial, you'll learn how to build a fully automated CI/CD pipeline usi
 
 ## 📐 Architecture Diagram
 
-![Image](https://github.com/user-attachments/assets/d389dae9-e6e7-44af-b15e-791d5f8f9642)
+![Image](https://github.com/user-attachments/assets/5b1197e5-0594-45ac-82ca-1877c4a36fa3)
 
 
 ## <a name="steps">☑️ Steps</a>
