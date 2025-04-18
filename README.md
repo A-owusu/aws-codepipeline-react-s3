@@ -4,7 +4,7 @@
 
   <br />
     <a href="https://youtu.be/Tbp6VJrq2ho?si=htW_VrEVu3E4XiEn" target="_blank">
-      <img src="https://github.com/user-attachments/assets/e8f01153-2ea4-4c89-853f-1b604b6effad" alt="Project Banner">
+      <img src="https://github.com/user-attachments/assets/9f9b55f3-c9c2-4b87-97c7-030be3464a83" alt="Project Banner">
     </a>
   <br />
 
@@ -28,11 +28,6 @@ like these step-by-step in a beginner-friendly manner!
 ## <a name="introduction">🤖 Introduction</a>
 
 In this tutorial, you'll learn how to build a fully automated CI/CD pipeline using AWS CodePipeline, CodeBuild, and Amazon S3 to deploy a React.js application hosted on GitHub. Say goodbye to manual deployments—every time you push to your repo, your app will automatically build and deploy to a static website on S3!
-
-
-## 📐 Architecture Diagram
-
-![Image](https://github.com/user-attachments/assets/5b1197e5-0594-45ac-82ca-1877c4a36fa3)
 
 
 ## <a name="steps">☑️ Steps</a>
