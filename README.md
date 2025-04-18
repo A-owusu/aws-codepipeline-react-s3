@@ -66,3 +66,24 @@ Now let’s set up CodeBuild, which will handle building the React app.
 3. Connect to GitHub or choose AWS CodePipeline as the source later.
 4. Choose a managed image: aws/codebuild/standard:6.0 (or latest).
 5. Set the buildspec file as default (we’ll add it to our repo).
+
+Inside your GitHub repo, create a file named buildspec.yml in the root:
+
+```yaml
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: build
+
+```
