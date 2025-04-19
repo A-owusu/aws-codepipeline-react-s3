@@ -75,16 +75,21 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: 18
     commands:
-      - npm install
+      - echo Installing dependencies...
+      - npm ci --force or --legacy-peer-deps
+
   build:
     commands:
+      - echo Building the React app...
       - npm run build
+
 artifacts:
   files:
     - '**/*'
-  base-directory: build
+  base-directory: dist
+  discard-paths: no
 
 ```
 
@@ -100,3 +105,16 @@ Now the fun part—building the pipeline.
 4. Add source stage:
 <br>- Source provider: GitHub (connect your GitHub account).
 <br>- Select your repository and branch.
+5. Add build stage:
+<br>- Provider: AWS CodeBuild.
+<br>- Select the project we created earlier.
+6. Add deploy stage:
+<br>- Provider: Amazon S3.
+<br>- Bucket: Select the one you created earlier.
+<br>- Extract file option: YES.
+
+## ➡️ Step 5 - Test the Pipeline
+
+Let’s test the whole pipeline. I’ll make a small change to the homepage text and push it to GitHub.
+
+As soon as the code is pushed, CodePipeline is triggered. You’ll see it run through the source, build, and deploy stages.
