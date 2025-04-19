@@ -190,9 +190,16 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
 
 ![Image](https://github.com/user-attachments/assets/625e9e8b-88ec-413d-931d-922cd21303d8)
 
+<br>- Go back to the S3 Bucket console, on the top bar, choose Objects, then click on `index.html`
+<br>- You should see your React.js App running on Amazon S3
+
+![Image](https://github.com/user-attachments/assets/4d6c02fd-44ba-49d5-967f-23f3d189087e)
+
 
 ## ➡️ Step 5 - Test the Pipeline
 
 Let’s test the whole pipeline. I’ll make a small change to the homepage text and push it to GitHub.
 
 As soon as the code is pushed, CodePipeline is triggered. You’ll see it run through the source, build, and deploy stages.
+
+![Image](https://github.com/user-attachments/assets/e2225370-5dd6-4665-92af-0fb6cc96d316)
