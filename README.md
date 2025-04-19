@@ -64,7 +64,6 @@ Now the fun part—building the pipeline.
 
 1. Go to AWS CodePipeline, click Create pipeline.
 2. Name your pipeline: `reactapp-cicd-demo`
-3. Choose a new service role or an existing one.
 
 ![Image](https://github.com/user-attachments/assets/718b0040-e0f8-43e4-81ce-3b7e6d55c162)
 
@@ -82,26 +81,25 @@ Note: Make sure you select the repository that we cloned in Step 1
 
 5. Add build stage:
 <br>- Provider: AWS CodeBuild.
+<br>- Choose "Create project"
 
-
-
-
-6. Add deploy stage:
-<br>- Provider: Amazon S3.
-<br>- Bucket: Select the one you created earlier.
-<br>- Extract file option: YES.
+Let's proceed to next step and create the CodeBuild Project.
 
 ## ➡️ Step 4 - Create CodeBuild Project
 
 Now let’s set up CodeBuild, which will handle building the React app.
 
 1. Go to CodeBuild, click Create Build Project.
-2. Name it something like `react-app-builder`
-3. Connect to GitHub or choose AWS CodePipeline as the source later.
-4. Choose a managed image: aws/codebuild/standard:6.0 (or latest).
-5. Set the buildspec file as default (we’ll add it to our repo).
+2. Name it something like `react-cicd-pipeline-demo`
 
-Inside your GitHub repo, create a file named buildspec.yml in the root:
+![Image](https://github.com/user-attachments/assets/4f26b687-a04f-409d-877f-092e8dc59f46)
+
+4. Choose a managed image: aws/codebuild/standard:6.0 (or latest).
+5. Under build specifications, choose "Use a buildspec file" 
+
+![Image](https://github.com/user-attachments/assets/85452545-3411-4766-84ae-b9571389c11f)
+
+6. Inside your GitHub repo, create a file named `buildspec.yml` in the root:
 
 ```yaml
 version: 0.2
@@ -128,6 +126,32 @@ artifacts:
 ```
 
 Note: This file tells CodeBuild to install dependencies, build the app, and copy the contents of the build/ folder as artifacts.
+
+7. Back to the CodeBuild Project, keep the rest as default and choose "Continue to CodePipeline"
+8. Then the CodeBuild project will be create and added to the build stage as shown below, then choose "Next"
+
+![Image](https://github.com/user-attachments/assets/d5d2ffa9-7c7b-4502-86af-689f7bbe0dec)
+
+6. Add deploy stage:
+<br>- Provider: Amazon S3.
+<br>- Bucket: Select the one you created earlier `my-react-cicd-demo`
+<br>- Extract file option: YES, choose "Next"
+
+![Image](https://github.com/user-attachments/assets/ed4dfacf-40f5-4ddb-bf0b-20837c37ac8c)
+
+<br>- Lastly, review all the configuration and click "Create pipeline"
+
+Once the pipeline is successfully created, you’ll see it run through the `source` `build` and `deploy` stages.
+
+## Let's finish our S3 Buckect configuration
+
+1. Go to Amazon S3 console
+2. Select our existing S3 bucket `my-react-cicd-demo`
+3. You should see the S3 bucket with objects inside, extracted from our CodePipeline.
+4. Now let's make this S3 Bucket public:
+<br>- On the top bar, choose "Properties"
+
+
 
 
 
