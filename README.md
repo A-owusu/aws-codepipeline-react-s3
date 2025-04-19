@@ -203,3 +203,8 @@ Let’s test the whole pipeline. I’ll make a small change to the homepage text
 As soon as the code is pushed, CodePipeline is triggered. You’ll see it run through the source, build, and deploy stages.
 
 ![Image](https://github.com/user-attachments/assets/e2225370-5dd6-4665-92af-0fb6cc96d316)
+
+
+## 🗑️ Clean Up Resources
+
+When you’re done, clean up your AWS resources to avoid charges.
