@@ -74,7 +74,7 @@ Now the fun part—building the pipeline.
 <br>- Source provider: GitHub (connect your GitHub account).
 <br>- Select your repository and branch.
 
-Note: Make sure you select the repository that we cloned in Step 1
+⚠️Note: Make sure you select the repository that we cloned in Step 1
 
 ![Image](https://github.com/user-attachments/assets/7d7d6e7f-8a39-47e3-9271-ffa8c045c3cf)
 
@@ -128,7 +128,7 @@ artifacts:
 
 ```
 
-Note: This file tells CodeBuild to install dependencies, build the app, and copy the contents of the build/ folder as artifacts.
+⚠️Note: This file tells CodeBuild to install dependencies, build the app, and copy the contents of the build/ folder as artifacts.
 
 7. Back to the CodeBuild Project, keep the rest as default and choose "Continue to CodePipeline"
 8. Then the CodeBuild project will be create and added to the build stage as shown below, then choose "Next"
