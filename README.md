@@ -55,6 +55,8 @@ For the deploy provider we are going to use Amazon S3, we will create an S3 buck
 2. Click Create bucket.
 3. Name it something unique like `my-react-cicd-demo`
 
+![Image](https://github.com/user-attachments/assets/5e772a9f-c278-499c-975d-b1590f962e50)
+
 Once the s3 bucket is created, leave it for now, as we will come for it to finish the setup later.
 
 
@@ -64,6 +66,7 @@ Now the fun part—building the pipeline.
 
 1. Go to AWS CodePipeline, click Create pipeline.
 2. Name your pipeline: `reactapp-cicd-demo`
+3. Choose a new service role or an existing one.
 
 ![Image](https://github.com/user-attachments/assets/718b0040-e0f8-43e4-81ce-3b7e6d55c162)
 
@@ -151,8 +154,41 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
 4. Now let's make this S3 Bucket public:
 <br>- On the top bar, choose "Properties"
 
+![Image](https://github.com/user-attachments/assets/d0f13940-48fc-42ab-a42b-f57fca2eb618)
 
+<br>- Scroll down to "Static Website Hosting" and click "Edit"
 
+![Image](https://github.com/user-attachments/assets/24f26fed-ec71-4a0b-96df-72f51de20d02)
+
+<br>- Under "Static Website Hosting", choose "Enable"
+<br>- And specify `index.html` as the index document, then click "Save"
+
+![Image](https://github.com/user-attachments/assets/c25619a1-822a-40bd-b43a-f941c6c2c3c8)
+
+<br>- Next, edit some permissions, still on the tob bar choose "Permissions"
+<br>- Uncheck "Block all public access" to allow public access, then click "Save changes"
+
+![Image](https://github.com/user-attachments/assets/e4c76949-667c-4cba-a6ef-637e4d3dcc4a)
+
+<br>- Next, we will add a bucket policy to allow public read access inside our s3 bucket. Here's the sample policy you can use:
+<br>-  Replace: `your-bucket-name` with your actual bucket name, then click "Save"
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::your-bucket-name/*"
+    }
+  ]
+}
+```
+
+![Image](https://github.com/user-attachments/assets/625e9e8b-88ec-413d-931d-922cd21303d8)
 
 
 ## ➡️ Step 5 - Test the Pipeline
