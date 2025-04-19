@@ -34,8 +34,8 @@ In this tutorial, you'll learn how to build a fully automated CI/CD pipeline usi
 
 1. Setup your React App on GitHub
 2. Create S3 Bucket for Hosting
-3. Create CodeBuild Project
-4. Create CodePipeline
+3. Create CodePipeline
+4. Create CodeBuild Project
 5. Test the Pipeline
 6. Clean Up Resources
 
@@ -57,7 +57,41 @@ For the deploy provider we are going to use Amazon S3, we will create an S3 buck
 
 Once the s3 bucket is created, leave it for now, as we will come for it to finish the setup later.
 
-## ➡️ Step 3 - Create CodeBuild Project
+
+## ➡️ Step 3 - Create CodePipeline
+
+Now the fun part—building the pipeline.
+
+1. Go to AWS CodePipeline, click Create pipeline.
+2. Name your pipeline: `reactapp-cicd-demo`
+3. Choose a new service role or an existing one.
+
+![Image](https://github.com/user-attachments/assets/718b0040-e0f8-43e4-81ce-3b7e6d55c162)
+
+4. Add source stage:
+<br>- Source provider: GitHub (connect your GitHub account).
+<br>- Select your repository and branch.
+
+Note: Make sure you select the repository that we cloned in Step 1
+
+![Image](https://github.com/user-attachments/assets/7d7d6e7f-8a39-47e3-9271-ffa8c045c3cf)
+
+<br>- Once you are connected to your Github and select your repository, then choose "Next"
+
+![Image](https://github.com/user-attachments/assets/2177e920-30a3-4196-b673-5ae4f1733391)
+
+5. Add build stage:
+<br>- Provider: AWS CodeBuild.
+
+
+
+
+6. Add deploy stage:
+<br>- Provider: Amazon S3.
+<br>- Bucket: Select the one you created earlier.
+<br>- Extract file option: YES.
+
+## ➡️ Step 4 - Create CodeBuild Project
 
 Now let’s set up CodeBuild, which will handle building the React app.
 
@@ -95,23 +129,7 @@ artifacts:
 
 Note: This file tells CodeBuild to install dependencies, build the app, and copy the contents of the build/ folder as artifacts.
 
-## ➡️ Step 4 - Create CodePipeline
 
-Now the fun part—building the pipeline.
-
-1. Go to AWS CodePipeline, click Create pipeline.
-2. Name your pipeline: ReactApp-CI-CD.
-3. Choose a new service role or an existing one.
-4. Add source stage:
-<br>- Source provider: GitHub (connect your GitHub account).
-<br>- Select your repository and branch.
-5. Add build stage:
-<br>- Provider: AWS CodeBuild.
-<br>- Select the project we created earlier.
-6. Add deploy stage:
-<br>- Provider: Amazon S3.
-<br>- Bucket: Select the one you created earlier.
-<br>- Extract file option: YES.
 
 ## ➡️ Step 5 - Test the Pipeline
 
