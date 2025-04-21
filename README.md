@@ -191,6 +191,9 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
 ![Image](https://github.com/user-attachments/assets/625e9e8b-88ec-413d-931d-922cd21303d8)
 
 <br>- Go back to the S3 Bucket console, on the top bar, choose Objects, then click on `index.html`
+
+![Image](https://github.com/user-attachments/assets/ad404089-e051-40a6-b6c3-6de7a1acc4df)
+
 <br>- You should see your React.js App running on Amazon S3
 
 ![Image](https://github.com/user-attachments/assets/4d6c02fd-44ba-49d5-967f-23f3d189087e)
