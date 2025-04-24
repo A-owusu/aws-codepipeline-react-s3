@@ -96,12 +96,12 @@ Now let’s set up CodeBuild, which will handle building the React app.
 
 ![Image](https://github.com/user-attachments/assets/4f26b687-a04f-409d-877f-092e8dc59f46)
 
-4. Choose a managed image: aws/codebuild/standard:6.0 (or latest).
-5. Under build specifications, choose "Use a buildspec file" 
+3. Choose a managed image: aws/codebuild/standard:6.0 (or latest).
+4. Under build specifications, choose "Use a buildspec file" 
 
 ![Image](https://github.com/user-attachments/assets/85452545-3411-4766-84ae-b9571389c11f)
 
-6. Inside your GitHub repo, create a file named `buildspec.yml` in the root:
+5. Inside your GitHub repo, create a file named `buildspec.yml` in the root:
 
 ```yaml
 version: 0.2
@@ -129,12 +129,12 @@ artifacts:
 
 ⚠️Note: This file tells CodeBuild to install dependencies, build the app, and copy the contents of the build/ folder as artifacts.
 
-7. Back to the CodeBuild Project, keep the rest as default and choose "Continue to CodePipeline"
-8. Then the CodeBuild project will be create and added to the build stage as shown below, then choose "Next"
+6. Back to the CodeBuild Project, keep the rest as default and choose "Continue to CodePipeline"
+7. Then the CodeBuild project will be create and added to the build stage as shown below, then choose "Next"
 
 ![Image](https://github.com/user-attachments/assets/d5d2ffa9-7c7b-4502-86af-689f7bbe0dec)
 
-6. Add deploy stage:
+8. Add deploy stage:
 <br>- Provider: Amazon S3.
 <br>- Bucket: Select the one you created earlier `my-react-cicd-demo`
 <br>- Extract file option: YES, choose "Next"
