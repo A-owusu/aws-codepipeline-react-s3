@@ -170,7 +170,6 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
 ![Image](https://github.com/user-attachments/assets/e4c76949-667c-4cba-a6ef-637e4d3dcc4a)
 
 <br>- Next, we will add a bucket policy to allow public read access inside our s3 bucket. Here's the sample policy you can use:
-<br>-  Replace: `your-bucket-name` with your actual bucket name, then click "Save"
 
 ```json
 {
@@ -186,6 +185,7 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
   ]
 }
 ```
+⚠️ Replace: `your-bucket-name` with your actual bucket name, then click "Save"
 
 ![Image](https://github.com/user-attachments/assets/625e9e8b-88ec-413d-931d-922cd21303d8)
 
