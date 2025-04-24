@@ -112,7 +112,7 @@ phases:
       nodejs: 18
     commands:
       - echo Installing dependencies...
-      - npm ci --force or --legacy-peer-deps
+      - npm ci --legacy-peer-deps
 
   build:
     commands:
