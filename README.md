@@ -190,6 +190,7 @@ Once the pipeline is successfully created, you’ll see it run through the `sour
 ![Image](https://github.com/user-attachments/assets/625e9e8b-88ec-413d-931d-922cd21303d8)
 
 <br>- Go back to the S3 Bucket console, on the top bar, choose Objects, then click on `index.html`
+<br>- To visit your React.js App, click on the Object URL.
 
 ![Image](https://github.com/user-attachments/assets/ad404089-e051-40a6-b6c3-6de7a1acc4df)
 
